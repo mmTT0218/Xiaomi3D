@@ -59,13 +59,7 @@ public class TCPClient : MonoBehaviour
     public TMP_InputField OnDotNum;
     public Slider OnDotNum_slider;
     public Toggle OnDotNum_Int;
-    // 傾き
-    public TMP_InputField MRatioX;
-    public Slider MRatioX_slider;
-    public Toggle MRatioX_Int;
-    public TMP_InputField MRatioY;
-    public Slider MRatioY_slider;
-    public Toggle MRatioY_Int;
+
     public GameObject UI;
     void Start()
     {
@@ -161,9 +155,7 @@ public class TCPClient : MonoBehaviour
                             safe(Picture.text) + "/" + (Pic_Int.isOn ? "1" : "0") + "/" +
                             safe(Material.text) + "/" + (Mat_Int.isOn ? "1" : "0") + "/" +
                             safe(Origin.text) + "/" + (Ori_Int.isOn ? "1" : "0") + "/" +
-                            safe(OnDotNum.text) + "/" + (OnDotNum_Int.isOn ? "1" : "0") + "/" +
-                            safe(MRatioX.text) + "/" + (MRatioX_Int.isOn ? "1" : "0") + "/" +
-                            safe(MRatioY.text) + "/" + (MRatioY_Int.isOn ? "1" : "0") + "/\n";
+                            safe(OnDotNum.text) + "/" + (OnDotNum_Int.isOn ? "1" : "0") + "/\n";
                         Debug.Log("送信内容: " + message);
                         SendMessageToServer(message);
                     }
@@ -279,11 +271,7 @@ public class TCPClient : MonoBehaviour
                 Ori_Int.isOn = tokens[18] == "1";
                 OnDotNum_slider.value = float.Parse(tokens[19]);
                 OnDotNum_Int.isOn = tokens[20] == "1";
-                MRatioX_slider.value = float.Parse(tokens[21]);
-                MRatioX_Int.isOn = tokens[22] == "1";
-                MRatioY_slider.value = float.Parse(tokens[23]);
-                MRatioY_Int.isOn = tokens[24] == "1";
-                UI.SetActive(tokens[25] == "1");
+                UI.SetActive(tokens[21] == "1");
             });
         }
         else

@@ -18,7 +18,7 @@ MonoBehaviour:
   _experimentalE: 58
   _fixedResolution: 1
   _resolution: {x: 3048, y: 2032}
-  _pixelPitch: 0.09597
+  _pixelPitch: 0.0861
   _acrossSubpixel: {x: 1, y: -2}
   _startPixel: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   _patternNum: 16
